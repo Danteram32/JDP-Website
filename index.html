@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>JDP Truck &amp; Haul | Houston Junk Removal &amp; Hauling</title>
+  <meta name="description" content="Fast, reliable junk removal and hauling in Houston & surrounding areas. Same-day service available. Text us a picture for a free quote. (281) 541-5672"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-container":          "#1b3022",
+            "error-container":            "#ffdad6",
+            "on-surface-variant":         "#434843",
+            "on-tertiary-fixed-variant":  "#862200",
+            "on-secondary-container":     "#616267",
+            "primary-fixed-dim":          "#b4cdb8",
+            "primary-fixed":              "#d0e9d4",
+            "background":                 "#fcf9f8",
+            "secondary-container":        "#dfdfe4",
+            "on-secondary-fixed":         "#1a1c1f",
+            "on-tertiary-container":      "#ff5c29",
+            "secondary-fixed-dim":        "#c6c6cb",
+            "tertiary":                   "#330700",
+            "surface-container-low":      "#f6f3f2",
+            "surface-container":          "#f0eded",
+            "on-error-container":         "#93000a",
+            "inverse-surface":            "#303030",
+            "surface":                    "#fcf9f8",
+            "secondary-fixed":            "#e2e2e7",
+            "on-surface":                 "#1b1c1c",
+            "surface-bright":             "#fcf9f8",
+            "on-error":                   "#ffffff",
+            "error":                      "#ba1a1a",
+            "surface-dim":                "#dcd9d9",
+            "on-primary-fixed":           "#0b2013",
+            "surface-variant":            "#e4e2e1",
+            "primary":                    "#061b0e",
+            "on-tertiary-fixed":          "#3b0900",
+            "on-secondary":               "#ffffff",
+            "on-background":              "#1b1c1c",
+            "inverse-on-surface":         "#f3f0ef",
+            "on-primary":                 "#ffffff",
+            "tertiary-fixed-dim":         "#ffb5a0",
+            "secondary":                  "#5d5e63",
+            "on-secondary-fixed-variant": "#45474b",
+            "on-tertiary":                "#ffffff",
+            "surface-container-high":     "#eae7e7",
+            "on-primary-fixed-variant":   "#364c3c",
+            "outline":                    "#737973",
+            "surface-container-lowest":   "#ffffff",
+            "tertiary-fixed":             "#ffdbd1",
+            "surface-container-highest":  "#e4e2e1",
+            "surface-tint":               "#4d6453",
+            "tertiary-container":         "#571200",
+            "outline-variant":            "#c3c8c1",
+            "on-primary-container":       "#819986",
+            "inverse-primary":            "#b4cdb8"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body":     ["Inter"],
+            "label":    ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg":   "0.5rem",
+            "xl":   "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .icon-filled {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .haul-meter-track {
+      height: 8px;
+      background: #dfdfe4;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .haul-meter-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #061b0e 0%, #330700 100%);
+      border-radius: 999px;
+    }
+    body { min-height: 100dvh; }
+
+    /* Grain texture overlay */
+    .grain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      opacity: 0.3;
+    }
+
+    /* Spring-feel button press */
+    .btn-spring {
+      transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.15s ease;
+    }
+    .btn-spring:active { transform: scale(0.94); }
+    .btn-spring:hover  { opacity: 0.92; }
+    .btn-spring:focus-visible {
+      outline: 2px solid #ff5c29;
+      outline-offset: 3px;
+    }
+
+    /* Nav item hover */
+    .nav-item {
+      transition: opacity 0.15s ease, transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .nav-item:active { transform: scale(0.9); }
+
+    /* FAB */
+    .fab {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+    }
+    .fab:hover  { transform: scale(1.08); box-shadow: 0 12px 36px rgba(51,7,0,0.35); }
+    .fab:active { transform: scale(0.93); }
+    .fab:focus-visible { outline: 2px solid #ff5c29; outline-offset: 3px; }
+
+    /* Stepper line */
+    .step-line {
+      background: linear-gradient(to bottom, #1b3022, transparent);
+    }
+
+    /* Card hover lift */
+    .card-lift {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(27,28,28,0.08);
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+
+  <!-- ── TOP APP BAR ─────────────────────────────────────────── -->
+  <header class="bg-surface/90 backdrop-blur-xl sticky top-0 z-50 border-b border-outline-variant/10">
+    <div class="flex justify-between items-center px-4 py-3 max-w-lg mx-auto w-full">
+      <div class="flex items-center gap-2">
+        <img
+          alt="JDP Truck &amp; Haul"
+          class="h-20 w-auto object-contain object-left"
+          src="brand_assets/logo.png"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <span class="font-headline font-extrabold text-primary text-lg hidden">JDP Truck &amp; Haul</span>
+      </div>
+      <a
+        href="tel:2815415672"
+        class="btn-spring bg-tertiary text-on-tertiary-container px-5 py-2 rounded-full font-bold text-sm shadow-[0_4px_14px_rgba(51,7,0,0.3)]"
+      >
+        Call Now
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ───────────────────────────────────────────────── -->
+    <section class="relative grain overflow-hidden px-6 pt-12 pb-28 bg-gradient-to-b from-primary to-primary-container">
+      <!-- Subtle radial glow -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-[-20%] right-[-10%] w-72 h-72 rounded-full" style="background: radial-gradient(circle, rgba(255,92,41,0.12) 0%, transparent 70%);"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-64 h-64 rounded-full" style="background: radial-gradient(circle, rgba(27,48,34,0.6) 0%, transparent 70%);"></div>
+      </div>
+
+      <div class="relative z-10 max-w-md mx-auto">
+        <!-- Trust badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary/80 rounded-full mb-6 border border-on-tertiary-container/20">
+          <span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+          <span class="text-[10px] font-bold tracking-[0.2em] text-on-tertiary-container uppercase">Fast • Reliable • Affordable</span>
+        </div>
+
+        <h1 class="font-headline font-extrabold text-5xl text-on-primary leading-[1.08] tracking-tight mb-4">
+          Got Junk<br/>Taking Up<br/>Space?
+        </h1>
+        <p class="text-on-primary-container text-base font-medium mb-3 leading-relaxed">
+          Fast, Reliable Junk Removal &amp; Hauling Services in Houston &amp; Surrounding Areas.
+        </p>
+        <p class="text-on-primary-container/60 text-sm mb-8">
+          Junk Removal • Hauling • Cleanouts • Moving Help
+        </p>
+
+        <div class="flex flex-col gap-3">
+          <a
+            href="sms:2815415672"
+            class="btn-spring w-full bg-tertiary text-on-tertiary-container py-5 rounded-full font-bold flex items-center justify-center gap-3 shadow-[0_8px_24px_rgba(51,7,0,0.45)]"
+          >
+            <span class="material-symbols-outlined icon-filled" style="font-size:20px;">chat</span>
+            Text for Free Quote
+          </a>
+          <a
+            href="tel:2815415672"
+            class="btn-spring w-full bg-on-primary/10 border border-on-primary/20 text-on-primary py-4 rounded-full font-bold flex items-center justify-center gap-3"
+          >
+            <span class="material-symbols-outlined" style="font-size:20px;">phone</span>
+            (281) 541-5672
+          </a>
+          <p class="text-on-primary-container/60 text-center text-sm font-medium italic mt-1">
+            "Text us a picture for a fast quote"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SERVICES ───────────────────────────────────────────── -->
+    <section id="services" class="py-20 px-6 bg-surface">
+      <div class="max-w-md mx-auto">
+        <div class="flex items-end justify-between mb-10">
+          <h2 class="font-headline font-bold text-3xl tracking-tight leading-none">
+            Our<br/><span class="text-on-tertiary-container">Services</span>
+          </h2>
+          <div class="haul-meter-track w-24 mb-2">
+            <div class="haul-meter-fill w-3/4"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4">
+          <!-- Primary service card -->
+          <div class="card-lift bg-surface-container-low p-6 rounded-xl flex items-start gap-4">
+            <div class="bg-primary-container text-on-primary p-3 rounded-lg shrink-0">
+              <span class="material-symbols-outlined">delete_sweep</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-1">Junk Removal</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Full-service hauling for any unwanted items — we load, haul, and clean up.</p>
+            </div>
+          </div>
+
+          <!-- Quick 2-col grid -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="card-lift bg-surface-container-low p-5 rounded-xl">
+              <span class="material-symbols-outlined text-on-tertiary-container mb-3 block">garage</span>
+              <h4 class="font-bold text-sm leading-tight">Garage &amp; Shed Cleanouts</h4>
+            </div>
+            <div class="card-lift bg-surface-container-low p-5 rounded-xl">
+              <span class="material-symbols-outlined text-on-tertiary-container mb-3 block">hot_tub</span>
+              <h4 class="font-bold text-sm leading-tight">Hot Tub &amp; Couch Removal</h4>
+            </div>
+          </div>
+
+          <!-- Full list -->
+          <div class="bg-surface-container-low p-5 rounded-xl">
+            <ul class="grid grid-cols-1 gap-3">
+              <li class="flex items-center gap-3 text-sm font-semibold">
+                <span class="material-symbols-outlined icon-filled text-on-tertiary-container" style="font-size:20px;">check_circle</span>
+                Furniture &amp; Appliance Removal
+              </li>
+              <li class="flex items-center gap-3 text-sm font-semibold">
+                <span class="material-symbols-outlined icon-filled text-on-tertiary-container" style="font-size:20px;">check_circle</span>
+                Mattress &amp; Couch Removal
+              </li>
+              <li class="flex items-center gap-3 text-sm font-semibold">
+                <span class="material-symbols-outlined icon-filled text-on-tertiary-container" style="font-size:20px;">check_circle</span>
+                Yard Debris Cleanup
+              </li>
+              <li class="flex items-center gap-3 text-sm font-semibold">
+                <span class="material-symbols-outlined icon-filled text-on-tertiary-container" style="font-size:20px;">check_circle</span>
+                Construction Debris Removal
+              </li>
+              <li class="flex items-center gap-3 text-sm font-semibold">
+                <span class="material-symbols-outlined icon-filled text-on-tertiary-container" style="font-size:20px;">check_circle</span>
+                Storage Unit Cleanouts
+              </li>
+              <li class="flex items-center gap-3 text-sm font-semibold">
+                <span class="material-symbols-outlined icon-filled text-on-tertiary-container" style="font-size:20px;">check_circle</span>
+                Eviction &amp; Estate Cleanouts
+              </li>
+              <li class="flex items-center gap-3 text-sm font-semibold">
+                <span class="material-symbols-outlined icon-filled text-on-tertiary-container" style="font-size:20px;">check_circle</span>
+                Move-Out Cleanups
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HAULING SERVICES ───────────────────────────────────── -->
+    <section class="py-20 px-6 bg-surface-container-lowest">
+      <div class="max-w-md mx-auto">
+        <div class="flex items-end justify-between mb-10">
+          <h2 class="font-headline font-bold text-3xl tracking-tight leading-none text-primary">
+            Professional<br/><span class="text-on-tertiary-container">Hauling</span>
+          </h2>
+          <div class="haul-meter-track w-24 mb-2">
+            <div class="haul-meter-fill w-full"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4">
+          <div class="card-lift bg-surface-container-low p-6 rounded-xl flex items-start gap-4 border-l-4 border-on-tertiary-container">
+            <div class="bg-primary-container text-on-primary p-3 rounded-lg shrink-0">
+              <span class="material-symbols-outlined">home_repair_service</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-1">Furniture &amp; Appliance Transport</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Reliable moving for couches, furniture, and large appliances — careful handling guaranteed.</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="card-lift bg-surface-container-low p-5 rounded-xl">
+              <span class="material-symbols-outlined text-on-tertiary-container mb-3 block">layers</span>
+              <h4 class="font-bold text-sm leading-tight">Bulk Material Delivery</h4>
+            </div>
+            <div class="card-lift bg-surface-container-low p-5 rounded-xl">
+              <span class="material-symbols-outlined text-on-tertiary-container mb-3 block">construction</span>
+              <h4 class="font-bold text-sm leading-tight">Construction Site Hauling</h4>
+            </div>
+          </div>
+
+          <a
+            href="sms:2815415672"
+            class="btn-spring bg-primary-container p-6 rounded-xl flex items-center justify-between group"
+          >
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-on-primary-container">local_shipping</span>
+              <span class="font-bold text-on-primary text-base">Need something hauled?</span>
+            </div>
+            <span class="material-symbols-outlined text-on-tertiary-container transition-transform group-hover:translate-x-1" style="transition: transform 0.2s ease;">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHY CHOOSE US ──────────────────────────────────────── -->
+    <section class="py-20 px-6 bg-surface-container-low">
+      <div class="max-w-md mx-auto">
+        <h2 class="font-headline font-bold text-3xl mb-10 text-primary">Why We're<br/>Different</h2>
+        <div class="space-y-4">
+
+          <div class="card-lift flex gap-4 p-5 bg-surface-container-lowest rounded-2xl shadow-[0px_8px_24px_rgba(27,28,28,0.05)]">
+            <div class="text-on-tertiary-container shrink-0 mt-0.5">
+              <span class="material-symbols-outlined">bolt</span>
+            </div>
+            <div>
+              <p class="font-bold mb-0.5">Same-Day Service Available</p>
+              <p class="text-xs text-on-surface-variant leading-relaxed">We value your time and clear space fast.</p>
+            </div>
+          </div>
+
+          <div class="card-lift flex gap-4 p-5 bg-surface-container-lowest rounded-2xl shadow-[0px_8px_24px_rgba(27,28,28,0.05)]">
+            <div class="text-on-tertiary-container shrink-0 mt-0.5">
+              <span class="material-symbols-outlined">smartphone</span>
+            </div>
+            <div>
+              <p class="font-bold mb-0.5">Text-Based Quotes</p>
+              <p class="text-xs text-on-surface-variant leading-relaxed">No long forms. Just snap a photo and send.</p>
+            </div>
+          </div>
+
+          <div class="card-lift flex gap-4 p-5 bg-surface-container-lowest rounded-2xl shadow-[0px_8px_24px_rgba(27,28,28,0.05)]">
+            <div class="text-on-tertiary-container shrink-0 mt-0.5">
+              <span class="material-symbols-outlined">fitness_center</span>
+            </div>
+            <div>
+              <p class="font-bold mb-0.5">We Handle the Heavy Lifting</p>
+              <p class="text-xs text-on-surface-variant leading-relaxed">Sit back while our pros do all the work.</p>
+            </div>
+          </div>
+
+          <div class="card-lift flex gap-4 p-5 bg-surface-container-lowest rounded-2xl shadow-[0px_8px_24px_rgba(27,28,28,0.05)]">
+            <div class="text-on-tertiary-container shrink-0 mt-0.5">
+              <span class="material-symbols-outlined">payments</span>
+            </div>
+            <div>
+              <p class="font-bold mb-0.5">No Hidden Fees</p>
+              <p class="text-xs text-on-surface-variant leading-relaxed">Upfront pricing every time — no surprises.</p>
+            </div>
+          </div>
+
+          <div class="card-lift flex gap-4 p-5 bg-surface-container-lowest rounded-2xl shadow-[0px_8px_24px_rgba(27,28,28,0.05)]">
+            <div class="text-on-tertiary-container shrink-0 mt-0.5">
+              <span class="material-symbols-outlined">groups</span>
+            </div>
+            <div>
+              <p class="font-bold mb-0.5">Friendly Local Team</p>
+              <p class="text-xs text-on-surface-variant leading-relaxed">Professional, courteous crew you can trust in your home.</p>
+            </div>
+          </div>
+
+          <div class="card-lift flex gap-4 p-5 bg-surface-container-lowest rounded-2xl shadow-[0px_8px_24px_rgba(27,28,28,0.05)]">
+            <div class="text-on-tertiary-container shrink-0 mt-0.5">
+              <span class="material-symbols-outlined">verified</span>
+            </div>
+            <div>
+              <p class="font-bold mb-0.5">Locally Owned &amp; Operated</p>
+              <p class="text-xs text-on-surface-variant leading-relaxed">Serving our Houston neighbors with pride.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW IT WORKS ───────────────────────────────────────── -->
+    <section class="py-20 px-6 bg-surface">
+      <div class="max-w-md mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-[10px] font-black uppercase tracking-[0.3em] text-on-surface-variant mb-2 block">Our Simple Process</span>
+          <h2 class="font-headline font-extrabold text-4xl italic tracking-tight">How It Works</h2>
+        </div>
+
+        <div class="relative space-y-14">
+          <!-- Vertical line -->
+          <div class="absolute left-6 top-4 bottom-4 w-px step-line opacity-30"></div>
+
+          <div class="relative flex gap-8 items-start">
+            <div class="z-10 bg-primary-container text-on-primary w-12 h-12 rounded-full flex items-center justify-center shrink-0 border-4 border-surface font-bold font-headline">
+              1
+            </div>
+            <div class="pt-2">
+              <h3 class="font-headline font-bold text-xl mb-2">Text or Call Us</h3>
+              <p class="text-on-surface-variant leading-relaxed text-sm">Send us a picture or describe what needs to go — we make it easy.</p>
+            </div>
+          </div>
+
+          <div class="relative flex gap-8 items-start">
+            <div class="z-10 bg-tertiary text-on-tertiary-container w-12 h-12 rounded-full flex items-center justify-center shrink-0 border-4 border-surface font-bold font-headline">
+              2
+            </div>
+            <div class="pt-2">
+              <h3 class="font-headline font-bold text-xl mb-2">Get a Fast Quote</h3>
+              <p class="text-on-surface-variant leading-relaxed text-sm">We review your photo and send back a firm, upfront estimate. No surprises.</p>
+            </div>
+          </div>
+
+          <div class="relative flex gap-8 items-start">
+            <div class="z-10 bg-primary w-12 h-12 rounded-full flex items-center justify-center shrink-0 border-4 border-surface">
+              <span class="material-symbols-outlined text-on-primary" style="font-size:20px;">local_shipping</span>
+            </div>
+            <div class="pt-2">
+              <h3 class="font-headline font-bold text-xl mb-2">We Haul It Away</h3>
+              <p class="text-on-surface-variant leading-relaxed text-sm">Our team arrives, loads everything up, and sweeps the area clean.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-14">
+          <a
+            href="sms:2815415672"
+            class="btn-spring w-full bg-tertiary text-on-tertiary-container py-5 rounded-full font-bold flex items-center justify-center gap-3 shadow-[0_8px_24px_rgba(51,7,0,0.35)]"
+          >
+            <span class="material-symbols-outlined icon-filled" style="font-size:20px;">chat</span>
+            Get My Free Quote
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PRICING & LOCATION ─────────────────────────────────── -->
+    <section class="px-6 py-10 bg-surface">
+      <div class="max-w-md mx-auto space-y-4">
+
+        <!-- Pricing card -->
+        <div class="bg-tertiary-fixed p-8 rounded-[2rem] text-center border border-on-tertiary-fixed-variant/10">
+          <span class="material-symbols-outlined icon-filled text-3xl mb-4 block text-on-tertiary-fixed-variant">savings</span>
+          <h3 class="font-headline font-bold text-2xl mb-2 text-on-tertiary-fixed">Upfront Pricing</h3>
+          <p class="font-medium text-on-tertiary-fixed/70 mb-6">No Hidden Fees. Ever.</p>
+          <div class="bg-on-tertiary-fixed text-tertiary-fixed py-2 px-5 rounded-full inline-block font-black text-xs tracking-widest uppercase">
+            New Customer Discount Available
+          </div>
+        </div>
+
+        <!-- Service area card -->
+        <div class="bg-primary-container p-8 rounded-[2rem] overflow-hidden relative">
+          <div class="absolute right-[-15%] top-[-15%] opacity-10 pointer-events-none">
+            <span class="material-symbols-outlined icon-filled text-on-primary" style="font-size:120px;">location_on</span>
+          </div>
+          <div class="relative z-10">
+            <h3 class="font-headline font-bold text-xl text-on-primary mb-2">Service Area</h3>
+            <p class="text-on-primary-container leading-relaxed mb-4">Proudly Serving Houston &amp; Surrounding Areas</p>
+            <a
+              href="https://maps.google.com/?q=Houston,TX"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-spring inline-flex items-center gap-2 text-on-primary font-bold text-sm"
+            >
+              <span class="material-symbols-outlined" style="font-size:18px;">explore</span>
+              View Map
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── BOTTOM CTA ─────────────────────────────────────────── -->
+    <section class="py-24 px-6 bg-surface text-center">
+      <div class="max-w-md mx-auto">
+        <h2 class="font-headline font-extrabold text-4xl mb-3 leading-tight tracking-tight">
+          Ready to reclaim<br/>your space?
+        </h2>
+        <p class="text-on-surface-variant mb-10 leading-relaxed">
+          Call or text for a fast, upfront quote.<br/>Same-day service available.
+        </p>
+
+        <div class="flex flex-col gap-5">
+          <a
+            href="tel:2815415672"
+            class="btn-spring text-4xl font-black text-primary font-headline tracking-tighter"
+          >
+            (281) 541-5672
+          </a>
+          <a
+            href="mailto:TheJDPcollective@gmail.com"
+            class="btn-spring text-on-surface-variant font-medium underline decoration-tertiary/40 text-sm"
+          >
+            TheJDPcollective@gmail.com
+          </a>
+
+          <div class="mt-6 pt-8 border-t border-outline-variant/30">
+            <p class="text-sm font-black text-on-tertiary-container uppercase tracking-widest mb-1">Text us a picture</p>
+            <p class="text-on-surface-variant text-xs italic">for fastest response</p>
+          </div>
+
+          <a
+            href="sms:2815415672"
+            class="btn-spring mt-2 w-full bg-tertiary text-on-tertiary-container py-5 rounded-full font-bold flex items-center justify-center gap-3 shadow-[0_8px_24px_rgba(51,7,0,0.35)]"
+          >
+            <span class="material-symbols-outlined icon-filled" style="font-size:20px;">chat</span>
+            Text Us Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spacer for bottom nav -->
+    <div class="h-28"></div>
+
+  </main>
+
+  <!-- ── FLOATING ACTION BUTTON ─────────────────────────────── -->
+  <a
+    href="sms:2815415672"
+    aria-label="Text us"
+    class="fab fixed bottom-28 right-5 z-[60] bg-on-tertiary-container w-14 h-14 rounded-full flex items-center justify-center shadow-[0_8px_28px_rgba(51,7,0,0.4)]"
+  >
+    <span class="material-symbols-outlined icon-filled text-white" style="font-size:24px;">chat</span>
+  </a>
+
+  <!-- ── BOTTOM NAV ─────────────────────────────────────────── -->
+  <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/85 backdrop-blur-xl rounded-t-[2rem] shadow-[0px_-8px_32px_rgba(27,28,28,0.07)] border-t border-outline-variant/15">
+
+    <a
+      href="sms:2815415672"
+      class="nav-item flex flex-col items-center justify-center text-primary opacity-70 hover:opacity-100"
+    >
+      <span class="material-symbols-outlined" style="font-size:24px;">chat</span>
+      <span class="font-label text-[10px] font-semibold uppercase tracking-widest mt-1">Text Us</span>
+    </a>
+
+    <a
+      href="tel:2815415672"
+      class="nav-item flex flex-col items-center justify-center bg-tertiary text-on-tertiary-container rounded-full px-6 py-2 shadow-[0_4px_16px_rgba(51,7,0,0.3)]"
+    >
+      <span class="material-symbols-outlined icon-filled" style="font-size:22px;">phone</span>
+      <span class="font-label text-[10px] font-black uppercase tracking-widest mt-0.5">Call Now</span>
+    </a>
+
+    <a
+      href="#services"
+      class="nav-item flex flex-col items-center justify-center text-primary opacity-70 hover:opacity-100"
+    >
+      <span class="material-symbols-outlined" style="font-size:24px;">category</span>
+      <span class="font-label text-[10px] font-semibold uppercase tracking-widest mt-1">Services</span>
+    </a>
+
+  </nav>
+
+</body>
+</html>
