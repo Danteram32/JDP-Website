@@ -81,6 +81,13 @@
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
+    .glass-nav {
+      background-color: rgba(6, 27, 14, 0.90);
+      backdrop-filter: blur(20px);
+    }
+    .hero-slash {
+      clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
+    }
     .icon-filled {
       font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
@@ -150,73 +157,99 @@
 
 <body class="bg-surface text-on-surface font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
 
-  <!-- ── TOP APP BAR ─────────────────────────────────────────── -->
-  <header class="bg-surface/90 backdrop-blur-xl sticky top-0 z-50 border-b border-outline-variant/10">
-    <div class="flex justify-between items-center px-4 py-3 max-w-lg mx-auto w-full">
-      <div class="flex items-center gap-2">
-        <img
-          alt="JDP Truck &amp; Haul"
-          class="h-20 w-auto object-contain object-left"
-          src="brand_assets/logo.png"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-        />
-        <span class="font-headline font-extrabold text-primary text-lg">JDP Truck &amp; Haul</span>
-      </div>
-      <a
-        href="tel:2815415672"
-        class="btn-spring bg-tertiary text-on-tertiary-container px-5 py-2 rounded-full font-bold text-sm shadow-[0_4px_14px_rgba(51,7,0,0.3)]"
-      >
-        Call Now
-      </a>
+  <!-- ── TOP NAV ──────────────────────────────────────────────── -->
+  <nav class="fixed top-0 w-full z-50 glass-nav shadow-2xl shadow-emerald-950/20 px-6 md:px-12 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <img
+        alt="JDP Truck &amp; Haul"
+        class="h-12 w-auto object-contain"
+        src="brand_assets/logo.png"
+        onerror="this.style.display='none';"
+      />
+      <span class="font-headline font-extrabold text-stone-50 text-lg tracking-tighter">JDP Truck &amp; Haul</span>
     </div>
-  </header>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-tertiary-container border-b-2 border-on-tertiary-container pb-1 hover:text-white transition-colors duration-300" href="#services">Services</a>
+      <a class="font-headline tracking-tight font-bold uppercase text-sm text-stone-300 hover:text-white transition-colors duration-300" href="#pricing">Pricing</a>
+      <a class="font-headline tracking-tight font-bold uppercase text-sm text-stone-300 hover:text-white transition-colors duration-300" href="#about">About</a>
+      <a class="font-headline tracking-tight font-bold uppercase text-sm text-stone-300 hover:text-white transition-colors duration-300" href="#contact">Contact</a>
+    </div>
+    <a
+      href="tel:2815415672"
+      class="btn-spring bg-tertiary text-on-tertiary-container px-5 py-2 rounded-full font-headline font-bold uppercase text-xs tracking-widest shadow-[0_4px_14px_rgba(51,7,0,0.35)]"
+    >
+      Book Now
+    </a>
+  </nav>
 
   <main>
 
     <!-- ── HERO ───────────────────────────────────────────────── -->
-    <section class="relative grain overflow-hidden px-6 pt-12 pb-28 bg-gradient-to-b from-primary to-primary-container">
-      <!-- Subtle radial glow -->
-      <div class="absolute inset-0 pointer-events-none">
-        <div class="absolute top-[-20%] right-[-10%] w-72 h-72 rounded-full" style="background: radial-gradient(circle, rgba(255,92,41,0.12) 0%, transparent 70%);"></div>
-        <div class="absolute bottom-[-10%] left-[-10%] w-64 h-64 rounded-full" style="background: radial-gradient(circle, rgba(27,48,34,0.6) 0%, transparent 70%);"></div>
+    <section class="relative min-h-screen flex items-center bg-primary overflow-hidden">
+      <!-- Left Content -->
+      <div class="relative z-10 w-full px-6 md:px-12 pt-28 pb-20 grid lg:grid-cols-12">
+        <div class="lg:col-span-5 flex flex-col justify-center space-y-8">
+          <div class="space-y-4">
+            <span class="inline-block px-4 py-1 bg-on-tertiary-container/10 border border-on-tertiary-container/20 text-on-tertiary-container rounded-full text-xs font-bold tracking-widest uppercase">
+              Fast • Reliable • Affordable
+            </span>
+            <h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-stone-50 leading-tight">
+              Got Junk Taking <br/><span class="text-on-tertiary-container italic">Up Space?</span>
+            </h1>
+            <p class="text-lg text-stone-300 max-w-xl font-body leading-relaxed">
+              Fast, Reliable Junk Removal &amp; Hauling Services in Houston &amp; Surrounding Areas.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="tel:2815415672"
+              class="btn-spring bg-tertiary text-on-tertiary-container px-8 py-4 rounded-full font-headline font-bold text-lg flex items-center justify-center gap-2 shadow-[0_8px_24px_rgba(51,7,0,0.45)]"
+            >
+              <span class="material-symbols-outlined">call</span> Call Now
+            </a>
+            <a
+              href="sms:2815415672"
+              class="btn-spring bg-primary-fixed text-on-primary-fixed px-8 py-4 rounded-full font-headline font-bold text-lg flex items-center justify-center gap-2"
+            >
+              <span class="material-symbols-outlined">chat</span> Text for Free Quote
+            </a>
+          </div>
+          <div class="p-6 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 max-w-md">
+            <p class="text-stone-50 font-semibold mb-1 flex items-center gap-2">
+              <span class="material-symbols-outlined text-on-tertiary-container">camera_alt</span>
+              Text us a picture for a fast quote
+            </p>
+            <p class="text-stone-400 text-sm">Snap a photo of your items and send it to (281) 541-5672.</p>
+          </div>
+          <div class="pt-2 flex flex-wrap gap-4 text-stone-400 text-sm font-headline uppercase tracking-widest font-bold">
+            <span>Junk Removal</span>
+            <span class="text-on-tertiary-container">•</span>
+            <span>Hauling</span>
+            <span class="text-on-tertiary-container">•</span>
+            <span>Cleanouts</span>
+            <span class="text-on-tertiary-container">•</span>
+            <span>Moving Help</span>
+          </div>
+        </div>
       </div>
 
-      <div class="relative z-10 max-w-md mx-auto">
-        <!-- Trust badge -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary/80 rounded-full mb-6 border border-on-tertiary-container/20">
-          <span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
-          <span class="text-[10px] font-bold tracking-[0.2em] text-on-tertiary-container uppercase">Fast • Reliable • Affordable</span>
+      <!-- Right Slashed Photo -->
+      <div class="absolute inset-y-0 right-0 w-full lg:w-4/6 z-0 hidden lg:block">
+        <div class="w-full h-full hero-slash overflow-hidden relative">
+          <img
+            alt="JDP Truck &amp; Haul team"
+            class="w-full h-full object-cover"
+            style="object-position: 35% center;"
+            src="brand_assets/team.jpeg"
+          />
+          <div class="absolute inset-0 bg-gradient-to-l from-primary/10 via-transparent to-primary/40"></div>
         </div>
+      </div>
 
-        <h1 class="font-headline font-extrabold text-5xl text-on-primary leading-[1.08] tracking-tight mb-4">
-          Got Junk<br/>Taking Up<br/>Space?
-        </h1>
-        <p class="text-on-primary-container text-base font-medium mb-3 leading-relaxed">
-          Fast, Reliable Junk Removal &amp; Hauling Services in Houston &amp; Surrounding Areas.
-        </p>
-        <p class="text-on-primary-container/60 text-sm mb-8">
-          Junk Removal • Hauling • Cleanouts • Moving Help
-        </p>
-
-        <div class="flex flex-col gap-3">
-          <a
-            href="sms:2815415672"
-            class="btn-spring w-full bg-tertiary text-on-tertiary-container py-5 rounded-full font-bold flex items-center justify-center gap-3 shadow-[0_8px_24px_rgba(51,7,0,0.45)]"
-          >
-            <span class="material-symbols-outlined icon-filled" style="font-size:20px;">chat</span>
-            Text for Free Quote
-          </a>
-          <a
-            href="tel:2815415672"
-            class="btn-spring w-full bg-on-primary/10 border border-on-primary/20 text-on-primary py-4 rounded-full font-bold flex items-center justify-center gap-3"
-          >
-            <span class="material-symbols-outlined" style="font-size:20px;">phone</span>
-            (281) 541-5672
-          </a>
-          <p class="text-on-primary-container/60 text-center text-sm font-medium italic mt-1">
-            "Text us a picture for a fast quote"
-          </p>
-        </div>
+      <!-- Mobile background -->
+      <div class="absolute inset-0 z-0 lg:hidden opacity-25">
+        <img alt="JDP Truck &amp; Haul team" class="w-full h-full object-cover object-top" src="brand_assets/team.jpeg"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/70 to-transparent"></div>
       </div>
     </section>
 
